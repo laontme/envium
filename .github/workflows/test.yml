@@ -28,4 +28,4 @@ jobs:
           deno-version: v1.16.2
 
       - name: Test Deno
-        run: deno test
+        run: deno test --allow-env --allow-read --allow-write
