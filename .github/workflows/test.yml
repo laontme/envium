@@ -28,4 +28,4 @@ jobs:
           deno-version: v1.16.2
 
       - name: Test Deno
-        run: deno test https://deno.land/std/examples/welcome.ts
+        run: deno test
