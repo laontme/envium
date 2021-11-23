@@ -26,4 +26,4 @@ export function envium(args: ParsedArgs) {
   }
 }
 
-envium(cli.options);
+envium((await cli(Deno.args)).options);
