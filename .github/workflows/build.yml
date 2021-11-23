@@ -22,7 +22,7 @@ jobs:
         run: deno compile --allow-env --allow-read --allow-write -o envium_linux_amd64 --target x86_64-unknown-linux-gnu envium.ts
 
       - name: Build windows amd64
-        run: deno compile --allow-env --allow-read --allow-write -o envium_windows_amd64.exe --target x86_64-pc-windows-msvc envium.ts
+        run: deno compile --allow-env --allow-read --allow-write -o envium_windows_amd64 --target x86_64-pc-windows-msvc envium.ts
 
       - name: Build darwin amd64
         run: deno compile --allow-env --allow-read --allow-write -o envium_darwin_amd64 --target x86_64-apple-darwin envium.ts
