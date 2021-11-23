@@ -27,5 +27,5 @@ jobs:
         with:
           deno-version: v1.16.2
 
-      - name: Test Deno
+      - name: Unit testing
         run: deno test --allow-env --allow-read --allow-write
