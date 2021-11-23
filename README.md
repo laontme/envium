@@ -15,4 +15,4 @@ WIP
 [laont.me](https://laont.me) and [stanislav@laont.me](mailto:stanislav@laont.me)
 
 ## license
-this repository is licensed under [MIT license](/LICENSE.md). You can freely copy, modify and distribute code, but with notice about license and copyright
+this repository is licensed under [MIT license](/LICENSE.md). you can freely copy, modify and distribute code, but with notice about license and copyright
