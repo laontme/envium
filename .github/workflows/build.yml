@@ -19,16 +19,16 @@ jobs:
           deno-version: v1.16.2
 
       - name: Build linux amd64
-        run: deno compile envium.ts --allow-env --allow-read --allow-write -o envium_linux_amd64 --target x86_64-unknown-linux-gnu
+        run: deno compile --allow-env --allow-read --allow-write -o envium_linux_amd64 --target x86_64-unknown-linux-gnu envium.ts
 
       - name: Build windows amd64
-        run: deno compile envium.ts --allow-env --allow-read --allow-write -o envium_windows_amd64.exe --target x86_64-pc-windows-msvc
+        run: deno compile --allow-env --allow-read --allow-write -o envium_windows_amd64.exe --target x86_64-pc-windows-msvc envium.ts
 
       - name: Build darwin amd64
-        run: deno compile envium.ts --allow-env --allow-read --allow-write -o envium_darwin_amd64 --target x86_64-apple-darwin
+        run: deno compile --allow-env --allow-read --allow-write -o envium_darwin_amd64 --target x86_64-apple-darwin envium.ts
 
       - name: Build darwin aarch64
-        run: deno compile envium.ts --allow-env --allow-read --allow-write -o envium_darwin_aarch64 --target aarch64-apple-darwin
+        run: deno compile --allow-env --allow-read --allow-write -o envium_darwin_aarch64 --target aarch64-apple-darwin envium.ts
 
       - name: Debug workflow
         run: tree; ls -la
