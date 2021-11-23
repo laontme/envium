@@ -30,6 +30,9 @@ jobs:
       - name: Build darwin aarch64
         run: deno compile envium.ts --allow-env --allow-read --allow-write -o envium_darwin_aarch64 --target aarch64-apple-darwin
 
+      - name: Debug workflow
+        run: tree; ls -la
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
