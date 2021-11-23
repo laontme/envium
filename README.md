@@ -5,6 +5,10 @@
 # envium
 > envsubst for directories
 
+## todo
+- [ ] write unit test for `envium()`
+- [ ] implement `--strict`
+
 ## how to use
 WIP
 
