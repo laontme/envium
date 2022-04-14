@@ -1,13 +1,9 @@
-[![deno badge](https://img.shields.io/badge/deno_inside-black?style=flat)](https://deno.land/)
-[![license badge](https://img.shields.io/badge/mit_license-blue?style=flat)](/LICENSE.md)
+[![go badge](https://img.shields.io/badge/golang_inside-007d9c?style=flat)](https://go.dev/)
+[![license badge](https://img.shields.io/badge/mit_license-black?style=flat)](/LICENSE.md)
 [![love badge](https://img.shields.io/badge/made_with_❤-ff3053?style=flat)](https://laont.me/)
 
 # envium
 > envsubst for directories
-
-## todo
-- [ ] write unit test for `envium()`
-- [ ] implement `--strict`
 
 ## how to use
 WIP
