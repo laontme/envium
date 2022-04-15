@@ -12,45 +12,37 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
-          - macos-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
+      - name: Setup Go
+        uses: actions/setup-go@v3
         with:
-          deno-version: v1.16.2
+          go-version: 1.18.x
 
       - name: Unit testing
-        run: deno test --allow-env --allow-read --allow-write
+        run: go test ./... -v
 
   build:
     needs: test
-    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
+      - name: Setup Go
+        uses: actions/setup-go@v3
         with:
-          deno-version: v1.16.2
+          go-version: 1.18.x
 
-      - name: Build linux amd64
-        run: deno compile --allow-env --allow-read --allow-write -o envium_linux_amd64 --target x86_64-unknown-linux-gnu envium.ts
+      - name: Build Linux AMD64
+        run: GOOS=linux GOARCH=amd64 go build -o envium_linux_amd64 cmd/envium/main.go
 
-      - name: Build windows amd64
-        run: deno compile --allow-env --allow-read --allow-write -o envium_windows_amd64 --target x86_64-pc-windows-msvc envium.ts
-
-      - name: Build darwin amd64
-        run: deno compile --allow-env --allow-read --allow-write -o envium_darwin_amd64 --target x86_64-apple-darwin envium.ts
-
-      - name: Build darwin aarch64
-        run: deno compile --allow-env --allow-read --allow-write -o envium_darwin_aarch64 --target aarch64-apple-darwin envium.ts
+      - name: Build Windows AMD64
+        run: GOOS=windows GOARCH=amd64 go build -o envium_windows_amd64.exe cmd/envium/main.go
 
       - name: Debug workflow
         run: tree; ls -la
